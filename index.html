@@ -304,6 +304,68 @@
 
 
   
+    <article id="post-python跳出多层循环" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/13/python跳出多层循环/" class="article-date">
+  	<time datetime="2016-06-13T06:40:37.000Z" itemprop="datePublished">2016-06-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/13/python跳出多层循环/">Python跳出多层循环</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Python 本身没有“break n” 和“goto” 的语法，这也造成了Python 难以跳出多层（特定层数）循环。下面是几个跳出多层（特定层数）循环的tip。</p>
+<p>1、自定义异常<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> class getoutofloop(Exception): pass</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  for i in range(5):</span><br><span class="line"><span class="code">    for j in range(5):</span></span><br><span class="line"><span class="code">      for k in range(5):</span></span><br><span class="line"><span class="code">        if i == j == k == 3:</span></span><br><span class="line"><span class="code">          raise getoutofloop()</span></span><br><span class="line"><span class="code">        else:</span></span><br><span class="line"><span class="code">          print i, '----', j, '----', k</span></span><br><span class="line">except getoutofloop:</span><br><span class="line">  pass</span><br></pre></td></tr></table></figure></p>
+<p>2、封装为函数return<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> def test():</span><br><span class="line">  for i in range(5):</span><br><span class="line"><span class="code">    for j in range(5):</span></span><br><span class="line"><span class="code">      for k in range(5):</span></span><br><span class="line"><span class="code">        if i == j == k == 3:</span></span><br><span class="line"><span class="code">          return</span></span><br><span class="line"><span class="code">        else:</span></span><br><span class="line"><span class="code">          print i, '----', j, '----', k</span></span><br><span class="line">test()</span><br></pre></td></tr></table></figure></p>
+<p>3、for … else … 用法</p>
+<p>上面的两种都是只能跳出多层而不能跳出特定层数的循环，接下来的这个正是为了跳出特定层数的循环。<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">for i in range(5):</span><br><span class="line"> for j in range(5):</span><br><span class="line">   for k in range(5):</span><br><span class="line"><span class="code">     if i == j == k == 3:</span></span><br><span class="line"><span class="code">       break</span></span><br><span class="line"><span class="code">     else:</span></span><br><span class="line"><span class="code">       print i, '----', j, '----', k</span></span><br><span class="line">   else: continue</span><br><span class="line">   break</span><br><span class="line"> else: continue</span><br><span class="line"> break</span><br></pre></td></tr></table></figure></p>
+<p>else在 while和for 正常循环完成之后执行，和直接写在 while和for 之后没有区别，但是如果用break结束循环之后else就不会执行了。这也是个很新奇的做法。才知道原来可以作为跳出多层循环用。不过要是有多次跳出不同层的循环的需求，也没辙了。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-JAVA中获取当前系统时间" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -346,68 +408,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-python跳出多层循环" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/13/python跳出多层循环/" class="article-date">
-  	<time datetime="2016-06-13T06:40:37.000Z" itemprop="datePublished">2016-06-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/13/python跳出多层循环/">Python跳出多层循环</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Python 本身没有“break n” 和“goto” 的语法，这也造成了Python 难以跳出多层（特定层数）循环。下面是几个跳出多层（特定层数）循环的tip。</p>
-<p>1、自定义异常<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> class getoutofloop(Exception): pass</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  for i in range(5):</span><br><span class="line"><span class="code">    for j in range(5):</span></span><br><span class="line"><span class="code">      for k in range(5):</span></span><br><span class="line"><span class="code">        if i == j == k == 3:</span></span><br><span class="line"><span class="code">          raise getoutofloop()</span></span><br><span class="line"><span class="code">        else:</span></span><br><span class="line"><span class="code">          print i, '----', j, '----', k</span></span><br><span class="line">except getoutofloop:</span><br><span class="line">  pass</span><br></pre></td></tr></table></figure></p>
-<p>2、封装为函数return<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> def test():</span><br><span class="line">  for i in range(5):</span><br><span class="line"><span class="code">    for j in range(5):</span></span><br><span class="line"><span class="code">      for k in range(5):</span></span><br><span class="line"><span class="code">        if i == j == k == 3:</span></span><br><span class="line"><span class="code">          return</span></span><br><span class="line"><span class="code">        else:</span></span><br><span class="line"><span class="code">          print i, '----', j, '----', k</span></span><br><span class="line">test()</span><br></pre></td></tr></table></figure></p>
-<p>3、for … else … 用法</p>
-<p>上面的两种都是只能跳出多层而不能跳出特定层数的循环，接下来的这个正是为了跳出特定层数的循环。<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">for i in range(5):</span><br><span class="line"> for j in range(5):</span><br><span class="line">   for k in range(5):</span><br><span class="line"><span class="code">     if i == j == k == 3:</span></span><br><span class="line"><span class="code">       break</span></span><br><span class="line"><span class="code">     else:</span></span><br><span class="line"><span class="code">       print i, '----', j, '----', k</span></span><br><span class="line">   else: continue</span><br><span class="line">   break</span><br><span class="line"> else: continue</span><br><span class="line"> break</span><br></pre></td></tr></table></figure></p>
-<p>else在 while和for 正常循环完成之后执行，和直接写在 while和for 之后没有区别，但是如果用break结束循环之后else就不会执行了。这也是个很新奇的做法。才知道原来可以作为跳出多层循环用。不过要是有多次跳出不同层的循环的需求，也没辙了。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 	</div>
 
       
