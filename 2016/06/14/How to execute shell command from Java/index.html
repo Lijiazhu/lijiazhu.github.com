@@ -4,21 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Python跳出多层循环 | Jiazhu Li&#39;s Blog</title>
+  <title>How to execute shell command from Java | Jiazhu Li&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Python 本身没有“break n” 和“goto” 的语法，这也造成了Python 难以跳出多层（特定层数）循环。下面是几个跳出多层（特定层数）循环的tip。
-1、自定义异常123456789101112 class getoutofloop(Exception): passtry:  for i in range(5):    for j in range(5):      for k i">
+  <meta name="description" content="In Java, you can use Runtime.getRuntime().exec to execute external shell command :12345678910p = Runtime.getRuntime().exec(&quot;host -t a &quot; + domain);p.waitFor();BufferedReader reader =          new Buffe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python跳出多层循环">
-<meta property="og:url" content="http://yoursite.com/2016/06/13/python跳出多层循环/index.html">
+<meta property="og:title" content="How to execute shell command from Java">
+<meta property="og:url" content="http://yoursite.com/2016/06/14/How to execute shell command from Java/index.html">
 <meta property="og:site_name" content="Jiazhu Li's Blog">
-<meta property="og:description" content="Python 本身没有“break n” 和“goto” 的语法，这也造成了Python 难以跳出多层（特定层数）循环。下面是几个跳出多层（特定层数）循环的tip。
-1、自定义异常123456789101112 class getoutofloop(Exception): passtry:  for i in range(5):    for j in range(5):      for k i">
-<meta property="og:updated_time" content="2016-06-13T07:09:54.693Z">
+<meta property="og:description" content="In Java, you can use Runtime.getRuntime().exec to execute external shell command :12345678910p = Runtime.getRuntime().exec(&quot;host -t a &quot; + domain);p.waitFor();BufferedReader reader =          new Buffe">
+<meta property="og:updated_time" content="2016-06-14T03:32:02.201Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python跳出多层循环">
-<meta name="twitter:description" content="Python 本身没有“break n” 和“goto” 的语法，这也造成了Python 难以跳出多层（特定层数）循环。下面是几个跳出多层（特定层数）循环的tip。
-1、自定义异常123456789101112 class getoutofloop(Exception): passtry:  for i in range(5):    for j in range(5):      for k i">
+<meta name="twitter:title" content="How to execute shell command from Java">
+<meta name="twitter:description" content="In Java, you can use Runtime.getRuntime().exec to execute external shell command :12345678910p = Runtime.getRuntime().exec(&quot;host -t a &quot; + domain);p.waitFor();BufferedReader reader =          new Buffe">
   
     <link rel="alternative" href="/atom.xml" title="Jiazhu Li&#39;s Blog" type="application/atom+xml">
   
@@ -200,11 +197,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-python跳出多层循环" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-How to execute shell command from Java" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/13/python跳出多层循环/" class="article-date">
-  	<time datetime="2016-06-13T06:40:37.000Z" itemprop="datePublished">2016-06-13</time>
+      <a href="/2016/06/14/How to execute shell command from Java/" class="article-date">
+  	<time datetime="2016-06-14T03:27:54.221Z" itemprop="datePublished">2016-06-14</time>
 </a>
     </div>
   
@@ -217,7 +214,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python跳出多层循环
+      How to execute shell command from Java
     </h1>
   
 
@@ -226,7 +223,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
 	</div>
 
         
@@ -237,13 +234,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Python 本身没有“break n” 和“goto” 的语法，这也造成了Python 难以跳出多层（特定层数）循环。下面是几个跳出多层（特定层数）循环的tip。</p>
-<p>1、自定义异常<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> class getoutofloop(Exception): pass</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  for i in range(5):</span><br><span class="line"><span class="code">    for j in range(5):</span></span><br><span class="line"><span class="code">      for k in range(5):</span></span><br><span class="line"><span class="code">        if i == j == k == 3:</span></span><br><span class="line"><span class="code">          raise getoutofloop()</span></span><br><span class="line"><span class="code">        else:</span></span><br><span class="line"><span class="code">          print i, '----', j, '----', k</span></span><br><span class="line">except getoutofloop:</span><br><span class="line">  pass</span><br></pre></td></tr></table></figure></p>
-<p>2、封装为函数return<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> def test():</span><br><span class="line">  for i in range(5):</span><br><span class="line"><span class="code">    for j in range(5):</span></span><br><span class="line"><span class="code">      for k in range(5):</span></span><br><span class="line"><span class="code">        if i == j == k == 3:</span></span><br><span class="line"><span class="code">          return</span></span><br><span class="line"><span class="code">        else:</span></span><br><span class="line"><span class="code">          print i, '----', j, '----', k</span></span><br><span class="line">test()</span><br></pre></td></tr></table></figure></p>
-<p>3、for … else … 用法</p>
-<p>上面的两种都是只能跳出多层而不能跳出特定层数的循环，接下来的这个正是为了跳出特定层数的循环。<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">for i in range(5):</span><br><span class="line"> for j in range(5):</span><br><span class="line">   for k in range(5):</span><br><span class="line"><span class="code">     if i == j == k == 3:</span></span><br><span class="line"><span class="code">       break</span></span><br><span class="line"><span class="code">     else:</span></span><br><span class="line"><span class="code">       print i, '----', j, '----', k</span></span><br><span class="line">   else: continue</span><br><span class="line">   break</span><br><span class="line"> else: continue</span><br><span class="line"> break</span><br></pre></td></tr></table></figure></p>
-<p>else在 while和for 正常循环完成之后执行，和直接写在 while和for 之后没有区别，但是如果用break结束循环之后else就不会执行了。这也是个很新奇的做法。才知道原来可以作为跳出多层循环用。不过要是有多次跳出不同层的循环的需求，也没辙了。</p>
-
+        <p>In Java, you can use Runtime.getRuntime().exec to execute external shell command :<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">p = Runtime.getRuntime().exec(<span class="string">"host -t a "</span> + domain);</span><br><span class="line">p.waitFor();</span><br><span class="line"></span><br><span class="line">BufferedReader reader = </span><br><span class="line">         <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(p.getInputStream()));</span><br><span class="line"></span><br><span class="line">String line = <span class="string">""</span>;			</span><br><span class="line"><span class="keyword">while</span> ((line = reader.readLine())!= <span class="keyword">null</span>) &#123;</span><br><span class="line">	sb.append(line + <span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-PING-example"><a href="#1-PING-example" class="headerlink" title="1. PING example"></a>1. PING example</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.mkyong.shell;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExecuteShellComand</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		ExecuteShellComand obj = <span class="keyword">new</span> ExecuteShellComand();</span><br><span class="line"></span><br><span class="line">		String domainName = <span class="string">"google.com"</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//in mac oxs</span></span><br><span class="line">		String command = <span class="string">"ping -c 3 "</span> + domainName;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//in windows</span></span><br><span class="line">		<span class="comment">//String command = "ping -n 3 " + domainName;</span></span><br><span class="line">		</span><br><span class="line">		String output = obj.executeCommand(command);</span><br><span class="line"></span><br><span class="line">		System.out.println(output);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> String <span class="title">executeCommand</span><span class="params">(String command)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		StringBuffer output = <span class="keyword">new</span> StringBuffer();</span><br><span class="line"></span><br><span class="line">		Process p;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			p = Runtime.getRuntime().exec(command);</span><br><span class="line">			p.waitFor();</span><br><span class="line">			BufferedReader reader = </span><br><span class="line">                            <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(p.getInputStream()));</span><br><span class="line"></span><br><span class="line">                        String line = <span class="string">""</span>;			</span><br><span class="line">			<span class="keyword">while</span> ((line = reader.readLine())!= <span class="keyword">null</span>) &#123;</span><br><span class="line">				output.append(line + <span class="string">"\n"</span>);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> output.toString();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -252,18 +244,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/13/Android Monkey/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/06/14/Python获取脚本所在目录的正确方法/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Monkey测试简介与命令
+          Python获取脚本所在目录的正确方法
         
       </div>
     </a>
   
   
-    <a href="/2016/06/13/JAVA中获取当前系统时间/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JAVA中获取当前系统时间</div>
+    <a href="/2016/06/13/Hexo+Github/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -298,7 +290,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="python跳出多层循环" data-title="Python跳出多层循环" data-url="http://yoursite.com/2016/06/13/python跳出多层循环/"></div>
+	<div class="ds-thread" data-thread-key="How to execute shell command from Java" data-title="How to execute shell command from Java" data-url="http://yoursite.com/2016/06/14/How to execute shell command from Java/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

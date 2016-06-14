@@ -4,62 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>About me | Jiazhu Li&#39;s Blog</title>
+  <title>Python获取脚本所在目录的正确方法 | Jiazhu Li&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="联系方式
-手机：13028847525
-Email：jiazhu@yeah.net
-QQ：420618397
-
-
-个人信息 
-
-李加柱/男/1993 
-本科/哈尔滨工业大学计算机系
-工作年限：1年
-期望职位：测试开发工程师
-
-
-工作经历TCL通讯有限公司 （ 2015年7月 ~ 至今）Pixi 4-7 3G Global项目 （2015/12/24-2016/3/4）该项目是我接手的第一个项目，该">
+  <meta name="description" content="1.以前的方法如果是要获得程序运行的当前目录所在位置，那么可以使用os模块的os.getcwd()函数。
+如果是要获得当前执行的脚本的所在目录位置，那么需要使用sys模块的sys.path[0]变量或者sys.argv[0]来获得。实际上sys.path是Python会去寻找模块的搜索路径列表，sys.path[0]和sys.argv[0]是一回事因为Python会自动把sys.argv[0]加入">
 <meta property="og:type" content="article">
-<meta property="og:title" content="About me">
-<meta property="og:url" content="http://yoursite.com/2016/06/08/About-me/index.html">
+<meta property="og:title" content="Python获取脚本所在目录的正确方法">
+<meta property="og:url" content="http://yoursite.com/2016/06/14/Python获取脚本所在目录的正确方法/index.html">
 <meta property="og:site_name" content="Jiazhu Li's Blog">
-<meta property="og:description" content="联系方式
-手机：13028847525
-Email：jiazhu@yeah.net
-QQ：420618397
-
-
-个人信息 
-
-李加柱/男/1993 
-本科/哈尔滨工业大学计算机系
-工作年限：1年
-期望职位：测试开发工程师
-
-
-工作经历TCL通讯有限公司 （ 2015年7月 ~ 至今）Pixi 4-7 3G Global项目 （2015/12/24-2016/3/4）该项目是我接手的第一个项目，该">
-<meta property="og:image" content="http://o8gce7fta.bkt.clouddn.com/DSC_0073_48800.jpg">
-<meta property="og:updated_time" content="2016-06-08T12:15:06.000Z">
+<meta property="og:description" content="1.以前的方法如果是要获得程序运行的当前目录所在位置，那么可以使用os模块的os.getcwd()函数。
+如果是要获得当前执行的脚本的所在目录位置，那么需要使用sys模块的sys.path[0]变量或者sys.argv[0]来获得。实际上sys.path是Python会去寻找模块的搜索路径列表，sys.path[0]和sys.argv[0]是一回事因为Python会自动把sys.argv[0]加入">
+<meta property="og:updated_time" content="2016-06-14T03:44:54.465Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About me">
-<meta name="twitter:description" content="联系方式
-手机：13028847525
-Email：jiazhu@yeah.net
-QQ：420618397
-
-
-个人信息 
-
-李加柱/男/1993 
-本科/哈尔滨工业大学计算机系
-工作年限：1年
-期望职位：测试开发工程师
-
-
-工作经历TCL通讯有限公司 （ 2015年7月 ~ 至今）Pixi 4-7 3G Global项目 （2015/12/24-2016/3/4）该项目是我接手的第一个项目，该">
-<meta name="twitter:image" content="http://o8gce7fta.bkt.clouddn.com/DSC_0073_48800.jpg">
+<meta name="twitter:title" content="Python获取脚本所在目录的正确方法">
+<meta name="twitter:description" content="1.以前的方法如果是要获得程序运行的当前目录所在位置，那么可以使用os模块的os.getcwd()函数。
+如果是要获得当前执行的脚本的所在目录位置，那么需要使用sys模块的sys.path[0]变量或者sys.argv[0]来获得。实际上sys.path是Python会去寻找模块的搜索路径列表，sys.path[0]和sys.argv[0]是一回事因为Python会自动把sys.argv[0]加入">
   
     <link rel="alternative" href="/atom.xml" title="Jiazhu Li&#39;s Blog" type="application/atom+xml">
   
@@ -241,11 +200,11 @@ QQ：420618397
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-About-me" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Python获取脚本所在目录的正确方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/08/About-me/" class="article-date">
-  	<time datetime="2016-06-08T11:46:12.000Z" itemprop="datePublished">2016-06-08</time>
+      <a href="/2016/06/14/Python获取脚本所在目录的正确方法/" class="article-date">
+  	<time datetime="2016-06-14T03:34:13.744Z" itemprop="datePublished">2016-06-14</time>
 </a>
     </div>
   
@@ -258,7 +217,7 @@ QQ：420618397
         
   
     <h1 class="article-title" itemprop="name">
-      About me
+      Python获取脚本所在目录的正确方法
     </h1>
   
 
@@ -266,6 +225,10 @@ QQ：420618397
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-File/">Python,File</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -274,35 +237,15 @@ QQ：420618397
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><ul>
-<li>手机：13028847525</li>
-<li>Email：jiazhu@yeah.net</li>
-<li>QQ：420618397</li>
-</ul>
-<hr>
-<h1 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h1><p><img src="http://o8gce7fta.bkt.clouddn.com/DSC_0073_48800.jpg" alt=""> </p>
-<ul>
-<li>李加柱/男/1993 </li>
-<li>本科/哈尔滨工业大学计算机系</li>
-<li>工作年限：1年</li>
-<li>期望职位：测试开发工程师</li>
-</ul>
-<hr>
-<h1 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h1><h2 id="TCL通讯有限公司-（-2015年7月-至今）"><a href="#TCL通讯有限公司-（-2015年7月-至今）" class="headerlink" title="TCL通讯有限公司 （ 2015年7月 ~ 至今）"></a>TCL通讯有限公司 （ 2015年7月 ~ 至今）</h2><h3 id="Pixi-4-7-3G-Global项目-（2015-12-24-2016-3-4）"><a href="#Pixi-4-7-3G-Global项目-（2015-12-24-2016-3-4）" class="headerlink" title="Pixi 4-7 3G Global项目 （2015/12/24-2016/3/4）"></a>Pixi 4-7 3G Global项目 （2015/12/24-2016/3/4）</h3><p>该项目是我接手的第一个项目，该项目是一款Android M 7寸Global平板项目，我负责对系统以及包装软件进行自动化脚本的编写、测试执行、问题跟踪以及报告输出。由于自己对事情喜欢刨根问底，在测试中发现Email模块出现概率性的邮件丢失的情况，当时向同事请教，得知之前项目也是有碰到同种问题的，一直没有找到原因，只是怀疑脚本中进行了误删除操作。但是我对自己脚本的逻辑十分清晰，不太赞成这种说法，后来通过运行脚本连续观察平板行为，找到根本原因是APK的问题，并反馈给了项目组。</p>
-<h3 id="Plus10-项目（2016-1-8至今）"><a href="#Plus10-项目（2016-1-8至今）" class="headerlink" title="Plus10 项目（2016/1/8至今）"></a>Plus10 项目（2016/1/8至今）</h3><p>这个项目是公司接触的第一款windows平板产品，并且主打公司明星产品，我负责对平板进行压力测试，经历的从无到有的过程。其中的过程包括，Stress测试Case整理与维护、自动化测试工具开发（AutoRefreshWeb、TCLReboot、TCLLog、TCLDiskFillTool、TClwifi 、TCLRestart）自动化测试执行、问题跟踪与报告输出，以及向微软学习HLK认证测试流程与方法，最终在项目团队的通力合作下，顺利完成项目并出货全球多个地区。</p>
-<h3 id="Pixi-4-6-4G-CKT项目（2016-4-14至今）"><a href="#Pixi-4-6-4G-CKT项目（2016-4-14至今）" class="headerlink" title="Pixi 4-6 4G CKT项目（2016/4/14至今）"></a>Pixi 4-6 4G CKT项目（2016/4/14至今）</h3><p>这个项目是alcatel（TCL通讯国外品牌）与美国运营商AT&amp;T合作推出的一款6寸手机平板，我主要负责对对系统以及包装软件进行自动化脚本的编写、Monkey测试、问题跟踪以及与US测试人员沟通。由于并非我本人在US实网进行Stability测试，所以对于测试中的问题需要很高的沟通成本，这中间不仅仅需要对自己脚本的稳定性十分有把握，对测试条件测试过程十分了解，还需要在与US测试人员沟通过程中有很大的耐心，并清楚的表达自己的想法。双方及时的反馈与有效的沟通，保证了项目测试计划顺利进行。</p>
-<h1 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h1><p>以下均为我熟练使用的技能</p>
-<ul>
-<li>AndroidUI自动化测试：Stability测试，Java/Python/Uiautomator</li>
-<li>Android Stress测试：Monkey 测试</li>
-<li>Windows开发：熟悉C/C++，熟练掌握C#/WPF/MFC</li>
-<li>Windows功能Stress测试</li>
-<li>熟悉持续集成技术：Jenkins</li>
-<li>Bug管理工具：Bugzilia/ALM</li>
-<li>版本管理、文档和自动化部署工具：Svn/Github</li>
-</ul>
-<hr>
-<h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><p>感谢您花时间阅读我的简历，期待能有机会和您共事。</p>
+        <h3 id="1-以前的方法"><a href="#1-以前的方法" class="headerlink" title="1.以前的方法"></a>1.以前的方法</h3><p>如果是要获得程序运行的当前目录所在位置，那么可以使用os模块的os.getcwd()函数。</p>
+<p>如果是要获得当前执行的脚本的所在目录位置，那么需要使用sys模块的sys.path[0]变量或者sys.argv[0]来获得。实际上sys.path是Python会去寻找模块的搜索路径列表，sys.path[0]和sys.argv[0]是一回事因为Python会自动把sys.argv[0]加入sys.path。</p>
+<p>具体来说，如果你在C:\test目录下执行python getpath\getpath.py，那么os.getcwd()会输出“C:\test”，sys.path[0]会输出“C:\test\getpath”。</p>
+<p>更特别地，如果你用py2exe模块把Python脚本编译为可执行文件，那么sys.path[0]的输出还会变化：<br>如果把依赖库用默认的方式打包为zip文件，那么sys.path[0]会输出“C:\test\getpath\libarary.zip”；<br>如果在setup.py里面指定zipfile=None参数，依赖库就会被打包到exe文件里面，那么sys.path[0]会输出“C:\test\getpath\getpath.exe”。</p>
+<h3 id="2-正确的方法"><a href="#2-正确的方法" class="headerlink" title="2.正确的方法"></a>2.正确的方法</h3><p>但以上这些其实都不是脚本文件所在目录的位置。<br>比如C:\test目录下还有一个名为sub的目录；C:\test目录下有getpath.py，sub目录下有 sub_path.py，getpath.py调用sub_path.py；我们在C:\test下执行getpath.py。如果我们在 sub_path.py里面使用sys.path[0]，那么其实得到的是getpath.py所在的目录路径“C:\test”，因为Python虚拟 机是从getpath.py开始执行的。如果想得到sub_path.py的路径，那么得这样：<br>os.path.split(os.path.realpath(<strong>file</strong>))[0]</p>
+<p>其中<strong>file</strong>虽然是所在.py文件的完整路径，但是这个变量有时候返回相对路径，有时候返回绝对路径，因此 还要用os.path.realpath()函数来处理一下。也即在这个例子里，os.path.realpath(<strong>file</strong>)输出是 “C:\test\sub\sub_path.py”，而os.path.split(os.path.realpath(<strong>file</strong>))[0]输 出才是“C:\test\sub”。</p>
+<p>3.实例说明</p>
+<p>总之，举例来讲，os.getcwd()、sys.path[0] （sys.argv[0]）和<strong>file</strong>的区别是这样的：<br>假设目录结构是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">C:test</span><br><span class="line"></span><br><span class="line">  [dir] getpath</span><br><span class="line"></span><br><span class="line">    [file] path.py</span><br><span class="line">    [dir] sub</span><br><span class="line"></span><br><span class="line">      [file] sub_path.py</span><br></pre></td></tr></table></figure></p>
+<p>然后我们在C:\test下面执行python getpath/path.py，这时sub_path.py里面与各种用法对应的值其实是：<br>os.getcwd() “C:\test”，取的是起始执行目录<br>sys.path[0]或sys.argv[0] “C:\test\getpath”，取的是被初始执行的脚本的所在目录<br>os.path.split(os.path.realpath(<strong>file</strong>))[0] “C:\test\getpath\sub”，取的是<strong>file</strong>所在文件sub_path.py的所在目录</p>
 
       
     </div>
@@ -312,15 +255,11 @@ QQ：420618397
     
 <nav id="article-nav">
   
-    <a href="/2016/06/13/JAVA中获取当前系统时间/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          JAVA中获取当前系统时间
-        
-      </div>
-    </a>
   
+    <a href="/2016/06/14/How to execute shell command from Java/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">How to execute shell command from Java</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -353,7 +292,7 @@ QQ：420618397
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="About-me" data-title="About me" data-url="http://yoursite.com/2016/06/08/About-me/"></div>
+	<div class="ds-thread" data-thread-key="Python获取脚本所在目录的正确方法" data-title="Python获取脚本所在目录的正确方法" data-url="http://yoursite.com/2016/06/14/Python获取脚本所在目录的正确方法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
